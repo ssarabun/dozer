@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dozer.event;
+package org.dozer;
+
+import org.dozer.event.DozerEvent;
 
 /**
- * 
- * @author Don Corleone
  *
+ * @author Sergey Sarabun <sergey.sarabun@gmail.com>
+ * @date May 24, 2016
  */
-public enum DozerEventType {
-  MAPPING_STARTED,
-  MAPPING_PRE_WRITING_DEST_VALUE,
-  MAPPING_PROCESS_WRITING_DEST_VALUE,
-  MAPPING_POST_WRITING_DEST_VALUE,
-  MAPPING_FINISHED
+public interface MapperInterceptor {
+
+    boolean processWritingDestinationValue(DozerEvent event);
 }
