@@ -213,7 +213,7 @@ public class MappingProcessor implements Mapper {
 
   /**
    * Create builder or target object if needed and call
-   * {@link MappingProcessor#mapToDestObject(org.dozer.classmap.ClassMap, Object, Object, boolean, String)} function with
+   * {@link MappingProcessor#mapToDestObject(org.dozer.classmap.ClassMap, Object, Object, boolean, String, MapperInterceptor)} function with
    * arguments {@code classMap}, {@code srcObj}, {@code result}, {@code bypassSuperMappings}, {@code mapId}
    * @param creationDirective   directive for concrete mapping (based mostly on {@code classMap})
    * @param classMap            class map information for concrete class
@@ -221,6 +221,7 @@ public class MappingProcessor implements Mapper {
    * @param result              target entity for mapping
    * @param bypassSuperMappings //TODO
    * @param mapId               mapping identifier
+   * @param interceptor         interceptor
    * @return                    result or created target entity for mapping
    */
   private <T> T createByCreationDirectiveAndMap(BeanCreationDirective creationDirective, ClassMap classMap, Object srcObj, T result, boolean bypassSuperMappings, String mapId, MapperInterceptor interceptor) {
@@ -311,12 +312,13 @@ public class MappingProcessor implements Mapper {
 
   /**
    * Perform mapping of a field.
-   * Uses {@link #mapFromFieldMap(Object, Object, Object, FieldMap)} to do the real work, unless
-   * if iterate, where {@link #mapFromIterateMethodFieldMap(Object, Object, Object, FieldMap)} is used. 
+   * Uses {@link #mapFromFieldMap(Object, Object, Object, FieldMap, MapperInterceptor)} to do the real work, unless
+   * if iterate, where {@link #mapFromIterateMethodFieldMap(Object, Object, Object, FieldMap, MapperInterceptor)} is used. 
    * 
    * @param fieldMapping Field mapping.
    * @param srcObj Source object.
    * @param destObj Destination object.
+   * @param interceptor Mapper interceptor.
    */
   private void mapField(FieldMap fieldMapping, Object srcObj, Object destObj, MapperInterceptor interceptor) {
 

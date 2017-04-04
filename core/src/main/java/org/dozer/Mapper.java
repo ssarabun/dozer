@@ -63,7 +63,7 @@ public interface Mapper {
    * @return
    * @throws MappingException
    */
-  <T> T map(Object srcObj, Class<T> destClass, MapperInterceptor interceptor) throws MappingException;
+  <T> T map(Object source, Class<T> destinationClass, MapperInterceptor interceptor) throws MappingException;
 
   /**
    * Constructs new instance of destinationClass and performs mapping between from source

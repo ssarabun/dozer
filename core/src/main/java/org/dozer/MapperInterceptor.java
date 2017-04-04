@@ -19,7 +19,7 @@ import org.dozer.event.DozerEvent;
 
 /**
  *
- * @author Sergey Sarabun <sergey.sarabun@gmail.com>
+ * @author Sergey Sarabun &lt;sergey.sarabun@gmail.com&gt;
  * @date May 24, 2016
  */
 public interface MapperInterceptor {
