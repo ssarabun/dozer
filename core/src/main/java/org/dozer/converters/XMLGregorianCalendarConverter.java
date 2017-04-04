@@ -1,5 +1,5 @@
 /**
- * Copyright 2005-2013 Dozer Project
+ * Copyright 2005-2017 Dozer Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import org.apache.commons.beanutils.Converter;
 import org.dozer.MappingException;
 
 /**
- * Internal class for converting Supported Data Types --> XMLGregorianCalendar.
+ * Internal class for converting Supported Data Types to XMLGregorianCalendar.
  * <p>
  * Supported source data types include
  * <ul>
@@ -41,10 +41,9 @@ import org.dozer.MappingException;
  * <li>java.lang.String</li>
  * <li>any objects that return a number of milliseconds applicable to java.lang.Long format in their toString() form</li>
  * </ul>
- * </p>
- * <p/>
+ * <p>
  * Only intended for internal use.
- * <p/>
+ * <p>
  *
  * @author pnyheim
  * @author dmitry.buzdin

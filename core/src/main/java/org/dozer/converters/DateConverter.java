@@ -1,5 +1,5 @@
 /**
- * Copyright 2005-2013 Dozer Project
+ * Copyright 2005-2017 Dozer Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,15 +27,15 @@ import org.apache.commons.beanutils.Converter;
 
 /**
  * Internal convector for handling Date/Time conversions.
- * <p/>
+ * <p>
  * Supported source data types include java.util.Date,
  * java.sql.Date, java.sql.Time, java.sql.Timestamp, java.util.Calendar, javax.xml.datatype.XMLGregorianCalendar,
  * java.lang.String and any objects that return a number of milliseconds applicable to java.lang.Long
  * format in their toString() form.
- * <p/>
+ * <p>
  * Supported return data types are all Date/Time types, which are based on a timestamp constructor
  * (e.g. new MyDate(new Long(1))). Calendar return type is also supported.
- * <p/>
+ * <p>
  * Only intended for internal use.
  *
  * @author tierney.matt

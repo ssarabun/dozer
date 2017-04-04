@@ -1,5 +1,5 @@
 /**
- * Copyright 2005-2014 Dozer Project
+ * Copyright 2005-2017 Dozer Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -432,7 +432,7 @@ public final class ReflectionUtils {
   *             field is of primitive type (e.g. boolean) - or the other way
   *             around.</li>
   *     </ul>
-  * </p>
+  * <p>
   *
   * @param clazz The class to find non-standard setters from
   * @param fieldName The field to find a non-standard setter for

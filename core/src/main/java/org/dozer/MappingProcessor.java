@@ -1,5 +1,5 @@
 /**
- * Copyright 2005-2013 Dozer Project
+ * Copyright 2005-2017 Dozer Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Internal Mapping Engine. Not intended for direct use by Application code.
  * This class does most of the heavy lifting and is very recursive in nature.
- * <p/>
+ * <p>
  * This class is not threadsafe and is instantiated for each new mapping request.
  *
  * @author garsombke.franz
@@ -462,7 +462,12 @@ public class MappingProcessor implements Mapper {
     if (primitiveConverter.accepts(srcFieldClass) || primitiveConverter.accepts(destFieldType)) {
       // Primitive or Wrapper conversion
       if (fieldMap.getDestHintContainer() != null) {
-        destFieldType = fieldMap.getDestHintContainer().getHint();
+        Class<?> destHintType = fieldMap.getDestHintType(srcFieldValue.getClass());
+        // if the destType is null this means that there was more than one hint.
+        // we must have already set the destType then.
+        if (destHintType != null) {
+          destFieldType = destHintType;
+        }
       }
 
       //#1841448 - if trim-strings=true, then use a trimmed src string value when converting to dest value
