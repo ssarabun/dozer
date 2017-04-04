@@ -69,6 +69,28 @@ public interface Mapper {
    * Constructs new instance of destinationClass and performs mapping between from source
    *
    * @param source
+   * @param destination
+   * @param interceptor
+   * @throws MappingException
+   */
+  void map(Object source, Object destination, MapperInterceptor interceptor) throws MappingException;
+
+  /**
+   * Constructs new instance of destinationClass and performs mapping between from source
+   *
+   * @param source
+   * @param destinationClass
+   * @param <T>
+   * @param interceptor
+   * @return
+   * @throws MappingException
+   */
+  <T> T map(Object srcObj, Class<T> destClass, MapperInterceptor interceptor) throws MappingException;
+
+  /**
+   * Constructs new instance of destinationClass and performs mapping between from source
+   *
+   * @param source
    * @param destinationClass
    * @param mapId
    * @param <T>
